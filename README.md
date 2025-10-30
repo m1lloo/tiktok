@@ -29,14 +29,13 @@ Basically, I’ll do **all the work** for you – totally free. 🎃
 
 ---
 
-## 🔮 Next Planned Update
+# 🔮 Next Planned Update
 
-- **Bonfire Night Special**  
-  - Fireworks or bonfire animation in the background  
-  - Special themed pills or badges  
-  - More spooky surprises for users  
-
-Stay tuned for the next spooky update!  
+- **Autumn Special**  
+  - 5-minute Autumn-themed firework show in the background  
+  - Countdown dynamically shows only relevant time units (d, h, m, s)  
+  - Special themed pills or badges for seasonal accounts  
+  - More cozy Autumn surprises for users  
 
 ---
 
