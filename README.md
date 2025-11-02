@@ -1,42 +1,35 @@
-# 🎃 Spooky TikTok Links 💀
+# 🍁 Autumn TikTok Links ☕  
+Welcome to the Autumn TikTok Links page! This cozy fall-themed layout is perfect for creators who want a seasonal landing page for all their TikTok accounts. Fully customizable, mobile-friendly, and packed with autumn vibes, it includes floating leaves, countdown timers, festive pills/badges, and more.  
 
-Welcome to the **Spooky TikTok Links** page! This layout is perfect for creators who want a Halloween-themed landing page for all their TikTok accounts. It’s fully customizable, mobile-friendly, and includes fun features like floating icons, countdown timers, and badges/pills for account info.
-
----
-
-## 🧙‍♀️ Use or Customize
-
+## 🧡 Use or Customize  
 You can use this layout directly for your TikTok links.  
 
-If you want a **custom version**, just **create an issue** on this repo and I will:  
+If you want a custom version, just create an issue on this repo and I will:  
+
 - Make the custom layout for you  
 - Deploy it if needed  
 - Keep it updated for free  
 
-Basically, I’ll do **all the work** for you – totally free. 🎃
+Basically, I’ll do all the work for you – totally free. 🍂  
 
----
+## 📝 Update Log  
+**v1.1 – Autumn Edition**  
+- Re-themed for cozy Autumn vibes  
+- Added floating leaf animations  
+- Added 5-minute Autumn-themed “firework show” background effect  
+- Countdown timer dynamically shows only relevant units (days, hours, minutes, seconds)  
+- Pills/badges updated to match seasonal accounts (Autumn, Warning, Winter, etc.)  
+- Main profile card and multiple link cards for your TikTok accounts  
+- 3-second Autumn-themed loading screen with progress bar  
+- Optimized for mobile screens with proper scaling  
+- Hover & hold Easter egg with animated leaves  
 
-## 📝 Update Log
+## 🔮 Next Planned Update  
+**Christmas Special** 🎄  
+- Festive Christmas-themed layout  
+- Countdown to Christmas events  
+- Snowy/festive floating icons  
+- Holiday-themed pills/badges for seasonal accounts  
+- Cozy interactive surprises for users  
 
-- **v1.0** – Initial spooky TikTok links layout  
-- Added **floating Halloween icons** for spooky vibes  
-- Added **main profile card** and multiple link cards  
-- Added **countdown timer** for upcoming/secret accounts  
-- Added **pills/badges** to indicate account types or warnings  
-- Added **3-second Halloween-themed loading screen** with progress bar  
-- Optimized for **mobile screens** with proper scaling  
-
----
-
-# 🔮 Next Planned Update
-
-- **Autumn Special**  
-  - 5-minute Autumn-themed firework show in the background  
-  - Countdown dynamically shows only relevant time units (d, h, m, s)  
-  - Special themed pills or badges for seasonal accounts  
-  - More cozy Autumn surprises for users  
-
----
-
-> Built with lots of coffee
+Built with lots of coffee and Autumn vibes ☕🍁  
