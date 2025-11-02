@@ -1,344 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎃 TikTok Links 💀</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tom’s TikTok Links 🍁</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    body {
-      background: radial-gradient(circle at top, #0c0c0f 0%, #08070b 100%);
-      color: #fff;
-      font-family: "Poppins", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      min-height: 100vh;
-      padding: 60px 20px;
-      text-align: center;
-      overflow-x: hidden;
-    }
+body {
+  background: radial-gradient(circle at top, #f5e6c5 0%, #d7b89c 100%);
+  color: #3b2a1a;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  padding: 60px 20px;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
 
-    /* Floating Halloween icons */
-    .floating {
-      position: fixed;
-      width: 40px;
-      height: 40px;
-      opacity: 0.08;
-      animation: float 15s infinite ease-in-out;
-      z-index: 0;
-    }
+/* Floating leaves */
+.floating {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  opacity: 0.15;
+  animation: float 15s infinite ease-in-out;
+  z-index: 0;
+  filter: sepia(60%) hue-rotate(-20deg);
+}
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-50px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+.floating:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.floating:nth-child(2) { top: 30%; right: 10%; animation-delay: 5s; }
+.floating:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 10s; }
 
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-50px) rotate(180deg); }
-      100% { transform: translateY(0) rotate(360deg); }
-    }
+/* Cards */
+.main-card {
+  background: linear-gradient(135deg, #fff5e1, #f2d7b6);
+  border: 2px solid #c97a3f;
+  box-shadow: 0 0 30px rgba(201, 122, 63, 0.4);
+  border-radius: 25px;
+  padding: 40px 30px;
+  max-width: 460px;
+  width: 100%;
+  transition: 0.3s;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+.main-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 50px rgba(201, 122, 63, 0.6);
+}
+.pfp {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #c97a3f;
+  margin-bottom: 15px;
+  box-shadow: 0 0 20px rgba(201, 122, 63, 0.5);
+}
+.main-card h2 {
+  margin: 10px 0 5px;
+  color: #a65d1d;
+  font-weight: 600;
+}
+.main-card p {
+  color: #5a4630;
+  margin-bottom: 20px;
+}
+.link-card {
+  background: #fff7ec;
+  border: 1px solid #e0c5a3;
+  border-radius: 18px;
+  padding: 16px 24px;
+  margin: 10px 0;
+  max-width: 400px;
+  width: 100%;
+  min-height: 90px;
+  transition: 0.25s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.link-card:hover {
+  border-color: #c97a3f;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(201, 122, 63, 0.4);
+  background: linear-gradient(145deg, #ffeed4, #f8dec0);
+}
+.link-card a {
+  color: #a65d1d;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.link-card p {
+  color: #6d5540;
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+.link-card.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  border-color: #cbb8a2 !important;
+  box-shadow: none !important;
+}
+.countdown {
+  font-size: 1.2rem;
+  color: #c97a3f;
+  margin-top: 5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
-    .floating:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
-    .floating:nth-child(2) { top: 30%; right: 10%; animation-delay: 5s; }
-    .floating:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 10s; }
+/* Pills */
+.pills { margin: 6px 0; }
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: #c97a3f;
+  color: #fff;
+  margin-right: 4px;
+}
+.pill.warning { background-color: #b94a48; }
+.pill.christmas { background-color: #588157; }
 
-    /* Cards */
-    .main-card {
-      background: linear-gradient(135deg, #1a0f1f, #130d18);
-      border: 2px solid #ff7518;
-      box-shadow: 0 0 30px rgba(255, 117, 24, 0.6);
-      border-radius: 25px;
-      padding: 40px 30px;
-      max-width: 460px;
-      width: 100%;
-      transition: 0.3s;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 1;
-    }
+/* Loading Screen */
+#loading-screen {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: radial-gradient(circle at center, #f5e6c5 0%, #d7b89c 100%);
+  color:#3b2a1a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  text-align:center;
+  padding:0 20px;
+}
+.loader-content { display:inline-block; max-width:100%; }
+#loading-screen h1 {
+  font-family:'Poppins',sans-serif;
+  color:#a65d1d;
+  font-size:1.8rem;
+  margin-bottom:12px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.progress-bar {
+  width:max-content;
+  min-width:180px;
+  height:16px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff7ec;
+  border:1px solid #e0c5a3;
+  margin:0 auto;
+}
+.progress-fill {
+  width:0%;
+  height:100%;
+  background: linear-gradient(90deg,#c97a3f,#e7a04d);
+  animation: fillProgress 3s forwards;
+}
+@keyframes fillProgress {0% { width:0%; } 100% { width:100%; }}
+@media (max-width:480px) {#loading-screen h1 { font-size:1.4rem; } .progress-bar { min-width:140px; height:14px; } }
 
-    .main-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 50px rgba(255, 117, 24, 0.9);
-    }
+/* Alert */
+#bonfire-alert {
+  max-width:460px;
+  z-index:2;
+  background: #fff3cd;
+  border: 1px solid #e0b55a;
+  color: #7a5a19;
+}
 
-    .pfp {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #ff7518;
-      margin-bottom: 15px;
-      box-shadow: 0 0 20px rgba(255, 117, 24, 0.8);
-    }
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #1b120c, #2b1d0f);
+  color: #ffb347;
+  border-top: 2px solid #ff7518;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+}
 
-    .main-card h2 {
-      margin: 10px 0 5px;
-      color: #ffb347;
-      font-weight: 600;
-      text-shadow: 0 0 10px rgba(255, 117, 24, 0.6);
-    }
+.autumn-footer a {
+  color: #ffecb3;
+  text-decoration: none;
+  margin-left: 5px;
+}
 
-    .main-card p {
-      color: #ccc;
-      margin-bottom: 20px;
-    }
+.autumn-footer a i {
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
 
-    .link-card {
-      background: #16161c;
-      border: 1px solid #2d2d36;
-      border-radius: 18px;
-      padding: 16px 24px;
-      margin: 10px 0;
-      max-width: 400px;
-      width: 100%;
-      min-height: 90px;
-      transition: 0.25s;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-    }
+.autumn-footer a:hover i {
+  color: #ffd966;
+  text-shadow: 0 0 6px #ffb347, 0 0 12px #ff7518;
+  transition: 0.3s;
+}
 
-    .link-card:hover {
-      border-color: #ff7518;
-      transform: translateY(-3px);
-      box-shadow: 0 0 20px rgba(255, 117, 24, 0.5);
-      background: linear-gradient(145deg, #1b1b23, #1a0f1f);
-    }
+.autumn-footer p {
+  margin: 3px 0;
+  font-size: 0.9rem;
+  color: #ffdd99;
+}
 
-    .link-card a {
-      color: #ffb347;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
+/* Add bottom padding to the body so content isn't hidden behind footer */
+body {
+  padding-bottom: 70px; /* roughly footer height + a little extra */
+}
 
-    .link-card p {
-      color: #bbb;
-      margin: 4px 0 0;
-      font-size: 0.9rem;
-    }
-
-    .link-card.disabled {
-      opacity: 0.4;
-      pointer-events: none;
-      border-color: #444 !important;
-      box-shadow: none !important;
-    }
-
-    .countdown {
-      font-size: 1.2rem;
-      color: #ff7518;
-      margin-top: 5px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    /* Halloween glow animation */
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 5px #ff7518, 0 0 10px #ffb347; }
-      50% { text-shadow: 0 0 20px #ff7518, 0 0 40px #a020f0; }
-    }
-
-    h2, a {
-      animation: glow 2s infinite;
-    }
-	
-	/* Pills */
-	.pills {
-	  margin: 6px 0;
-	}
-
-	.pill {
-	  display: inline-block;
-	  padding: 2px 8px;
-	  font-size: 0.75rem;
-	  font-weight: 600;
-	  border-radius: 12px;
-	  background-color: #ff7518;
-	  color: #fff;
-	  margin-right: 4px;
-	}
-
-	.pill.warning {
-
-	  background-color: #d9534f; 
-	}
-
-	.pill.christmas {
-	  background-color: #26B639; 
-	}
-	
-	
-  /* Loading Screen Styles */
-  #loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, #0c0c0f 0%, #08070b 100%);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    text-align: center;
-    padding: 0 20px; /* prevent text overflow on small screens */
-  }
-
-  .loader-content {
-    display: inline-block;
-    max-width: 100%;
-  }
-
-  #loading-screen h1 {
-    font-family: 'Poppins', sans-serif;
-    color: #ff7518;
-    font-size: 1.8rem;
-    text-shadow: 0 0 10px #ff7518, 0 0 20px #a020f0;
-    margin-bottom: 12px;
-    white-space: nowrap; /* force one line */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    animation: glow 2s infinite;
-  }
-
-  .progress-bar {
-    width: max-content; /* match text width */
-    min-width: 180px; /* prevent super tiny bars on very small screens */
-    height: 16px;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #16161c;
-    border: 1px solid #2d2d36;
-    margin: 0 auto; /* center under text */
-  }
-
-  .progress-fill {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, #ff7518, #ffb347);
-    animation: fillProgress 3s forwards;
-  }
-
-  @keyframes fillProgress {
-    0% { width: 0%; }
-    100% { width: 100%; }
-  }
-
-  @keyframes glow {
-    0%, 100% { text-shadow: 0 0 5px #ff7518, 0 0 10px #ffb347; }
-    50% { text-shadow: 0 0 20px #ff7518, 0 0 40px #a020f0; }
-  }
-
-  @media (max-width: 480px) {
-    #loading-screen h1 {
-      font-size: 1.4rem;
-    }
-
-    .progress-bar {
-      min-width: 140px;
-      height: 14px;
-    }
-  }
-  
-  </style>
+</style>
 </head>
 <body>
-
 
 <!-- LOADING SCREEN -->
 <div id="loading-screen">
   <div class="loader-content">
-    <h1>🎃 Spooky TikTok Loading... 💀</h1>
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
+    <h1>🍁 Warming up Autumn Links... ☕</h1>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
   </div>
 </div>
 
-<script>
-  // Remove loading screen after 3s
-  setTimeout(() => {
-    const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.style.transition = 'opacity 0.5s';
-    loadingScreen.style.opacity = '0';
-    setTimeout(() => loadingScreen.remove(), 500);a
-  }, 3000);
-</script>
+<!-- Floating Leaves -->
+<img src="https://cdn-icons-png.flaticon.com/512/2909/2909767.png" class="floating" />
+<img src="https://cdn-icons-png.flaticon.com/512/2909/2909721.png" class="floating" />
+<img src="https://cdn-icons-png.flaticon.com/512/2909/2909791.png" class="floating" />
+
+<!-- Alert -->
+<div id="bonfire-alert" class="alert text-center" role="alert">
+  Autumn Firework Show in: <span id="firework-countdown">Loading...</span>
+</div>
+
+<!-- MAIN CARD -->
+<div class="main-card">
+  <img src="mainpfp.jpeg" alt="Profile Picture" class="pfp">
+  <h2>@alr.tom 🍂</h2>
+  <p>This is my main TikTok account. Cozy fall vibes & calm chaos. Grab a blanket and join in! ☕</p>
+  <a href="https://www.tiktok.com/@alr.tom" target="_blank" class="btn btn-outline-warning btn-sm">Visit Profile</a>
+</div>
+
+<hr style="border: 1px solid #c97a3f; width: 80%; margin: 40px auto;">
 
 
-
-
-  <!-- Floating icons -->
-  <img src="https://cdn-icons-png.flaticon.com/512/761/761229.png" class="floating" />
-  <img src="https://cdn-icons-png.flaticon.com/512/761/761229.png" class="floating" />
-  <img src="https://cdn-icons-png.flaticon.com/512/761/761229.png" class="floating" />
-
-  <!-- MAIN CARD -->
-  <div class="main-card">
-    <img src="mainpfp.jpeg" alt="Profile Picture" class="pfp">
-    <h2>@alr.tom 🎃</h2>
-    <p>This is my main TikTok account. I post spooky vibes & stream chaos. Follow… if you dare. 👻</p>
-    <a href="https://www.tiktok.com/@alr.tom" target="_blank" class="btn btn-outline-warning btn-sm">Visit Profile</a>
-  </div>
-
-<!-- OTHER ACCOUNT CARDS -->
+<!-- OTHER ACCOUNTS -->
 <div class="link-card">
-  <a href="https://www.tiktok.com/@fvckitstom" target="_blank">@fvckitstom 🦇</a>
-  <div class="pills">
-    <span class="pill">Vlog Account</span>
-  </div>
-  <p>Behind the scenes & vlogs 🕸️</p>
+  <a href="https://www.tiktok.com/@fvckitstom" target="_blank">@fvckitstom 🍁</a>
+  <div class="pills"><span class="pill">Vlog Account</span></div>
+  <p>Behind the scenes & everyday moments 🍃</p>
 </div>
 
 <div class="link-card">
-  <a href="https://www.tiktok.com/@m1ll0_" target="_blank">@m1ll0_ 💀</a>
+  <a href="https://www.tiktok.com/@m1ll0_" target="_blank">@m1ll0_ 🌧️</a>
   <div class="pills">
     <span class="pill warning">Trigger Warning</span>
-    <span class="pill">Vent Account</span>	
+    <span class="pill">Vent Account</span>
   </div>
-  <p>Vent Account 🕷</p>
+  <p>Vent Account 🌙</p>
 </div> 
 
-<div class="link-card disabled">
-  <a href="#">@SecretDrop 🎭</a>
+<div class="link-card">
+  <a href="https://www.tiktok.com/@xmasscountdowwn">@xmasscountdowwn ⛄</a>
   <div class="pills">
-    <span class="pill">Coming Soon</span>
-	<span class="pill christmas">Christmas</span>
+    <span class="pill christmas">Winter</span>
   </div>
-  <p>Rising from the shadows soon 👀</p>
-  <div id="countdown" class="countdown">Loading countdown...</div>
+  <p>The countdown to Christmas with daily posts and occasional live streams! ❄️</p>
 </div>
 
-  <script>
-    // Countdown timer (UK time)
-    function updateCountdown() {
-      const releaseTime = new Date(Date.UTC(2025, 10, 1, 12, 0, 0)); // Nov 1st 12:00 UK
-      const now = new Date();
-      const diff = releaseTime.getTime() - now.getTime();
-      const countdownEl = document.getElementById("countdown");
+<div style="height: 6px; width: 80%; margin: 40px auto; border-radius: 3px; background: linear-gradient(90deg, #f5e6c5, #c97a3f);"></div>
 
-      if (diff <= 0) {
-        countdownEl.textContent = "Risen from the grave! 💀";
-        countdownEl.parentElement.classList.remove("disabled");
-        return;
-      }
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
+<!-- PORTFOLIO SECTION -->
+<div class="main-card">
+  <h2>Portfolio 🌌</h2>
+  <p>Check out my projects, website experiments, and creative work!</p>
+  <a href="https://toms-portfolio.vercel.app/" target="_blank" class="btn btn-outline-warning btn-sm">Visit Portfolio</a>
+</div>
 
-      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      setTimeout(updateCountdown, 1000);
+<!-- FOOTER -->
+<footer class="autumn-footer">
+  <p>
+    Want your own TikTok landing page? 
+    <a href="https://github.com/yourusername/yourrepo" target="_blank">
+      <i class="bi bi-github"></i>
+    </a>
+  </p>
+  <p>Built with ❤️ and Autumn vibes 🍁</p>
+</footer>
+
+<!-- Bootstrap Icons CSS (in <head> if not already) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- LOADING SCREEN ---
+  setTimeout(() => {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+      loadingScreen.style.transition = 'opacity 0.5s';
+      loadingScreen.style.opacity = '0';
+      setTimeout(() => loadingScreen.remove(), 500);
+    }
+  }, 3000);
+
+
+  // --- AUTUMN FIREWORK COUNTDOWN ---
+  const fireworkDuration = 5 * 60 * 1000; // 5 minutes
+  let fireworkStart = new Date(Date.UTC(2025, 10, 5, 22, 0, 0)).getTime();
+
+  function updateFireworkAlert() {
+    const now = Date.now();
+    let diff = fireworkStart - now;
+    const alertEl = document.getElementById('firework-countdown');
+
+    if (!alertEl) return;
+
+    if (diff <= 0) {
+      alertEl.textContent = "Live Now! 🎆";
+      return;
     }
 
-    updateCountdown();
-  </script>
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    diff -= days * (1000 * 60 * 60 * 24);
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    diff -= hours * (1000 * 60 * 60);
+    const minutes = Math.floor(diff / (1000 * 60));
+    diff -= minutes * (1000 * 60);
+    const seconds = Math.floor(diff / 1000);
+
+    let text = "";
+    if (days > 0) text += `${days}d `;
+    if (hours > 0 || text) text += `${hours}h `;
+    if (minutes > 0 || text) text += `${minutes}m `;
+    text += `${seconds}s`;
+
+    alertEl.textContent = text.trim();
+    setTimeout(updateFireworkAlert, 1000);
+  }
+  updateFireworkAlert();
+
+  // --- FIREWORKS CANVAS ---
+  const canvas = document.getElementById('firework-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  let fireworks = [];
+
+  class Particle {
+    constructor(x, y, color, vx, vy) {
+      this.x = x;
+      this.y = y;
+      this.vx = vx;
+      this.vy = vy;
+      this.alpha = 1;
+      this.color = color;
+      this.trail = [{ x, y }];
+    }
+    update() {
+      this.trail.push({ x: this.x, y: this.y });
+      if (this.trail.length > 5) this.trail.shift();
+      this.x += this.vx;
+      this.y += this.vy;
+      this.vy += 0.05;
+      this.alpha -= 0.02;
+    }
+    draw(ctx) {
+      ctx.globalAlpha = this.alpha;
+      ctx.strokeStyle = this.color;
+      ctx.beginPath();
+      for (let i = 0; i < this.trail.length - 1; i++) {
+        ctx.moveTo(this.trail[i].x, this.trail[i].y);
+        ctx.lineTo(this.trail[i + 1].x, this.trail[i + 1].y);
+      }
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  class Firework {
+    constructor(x, y, color) {
+      this.particles = [];
+      this.alive = true;
+      const count = 50 + Math.floor(Math.random() * 30);
+      for (let i = 0; i < count; i++) {
+        const angle = Math.random() * 2 * Math.PI;
+        const speed = Math.random() * 5 + 2;
+        this.particles.push(new Particle(x, y, color, Math.cos(angle) * speed, Math.sin(angle) * speed));
+      }
+    }
+    update() {
+      this.particles.forEach(p => p.update());
+      this.particles = this.particles.filter(p => p.alpha > 0);
+      if (this.particles.length === 0) this.alive = false;
+    }
+    draw(ctx) {
+      this.particles.forEach(p => p.draw(ctx));
+    }
+  }
+
+  function spawnFirework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height / 2;
+    const color = `hsl(${Math.random() * 60 + 20}, 80%, 60%)`;
+    fireworks.push(new Firework(x, y, color));
+  }
+
+  function animate() {
+    const now = Date.now();
+    const elapsed = now - fireworkStart;
+
+    ctx.fillStyle = "rgba(255,245,230,0.2)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (elapsed > 0 && elapsed < fireworkDuration) {
+      if (Math.floor(elapsed / 700) !== Math.floor((elapsed - 16) / 700)) {
+        spawnFirework();
+      }
+
+      fireworks.forEach(fw => fw.update());
+      fireworks.forEach(fw => fw.draw(ctx));
+      fireworks = fireworks.filter(fw => fw.alive);
+    }
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // --- HOVER & HOLD EASTER EGG ---
+  document.querySelectorAll('.link-card').forEach(card => {
+    let hoverTimer;
+
+    card.addEventListener('mouseenter', () => {
+      hoverTimer = setTimeout(() => {
+        triggerEasterEgg(card);
+      }, 5000); // 5 seconds
+    });
+
+    card.addEventListener('mouseleave', () => {
+      clearTimeout(hoverTimer);
+    });
+  });
+
+  function triggerEasterEgg(card) {
+    let container = card.querySelector('.card-easter-egg');
+    if (!container) {
+      container = document.createElement('div');
+      container.classList.add('card-easter-egg');
+      container.style.position = 'absolute';
+      container.style.top = 0;
+      container.style.left = 0;
+      container.style.width = '100%';
+      container.style.height = '100%';
+      container.style.pointerEvents = 'none';
+      card.appendChild(container);
+    }
+
+    for (let i = 0; i < 5; i++) {
+      const leaf = document.createElement('div');
+      leaf.classList.add('egg-leaf');
+      leaf.style.position = 'absolute';
+      leaf.style.width = '12px';
+      leaf.style.height = '12px';
+      leaf.style.background = "url('https://cdn-icons-png.flaticon.com/512/2909/2909767.png') no-repeat center center";
+      leaf.style.backgroundSize = 'contain';
+      leaf.style.left = Math.random() * 90 + '%';
+      leaf.style.animation = `leafFall ${1.5 + Math.random()}s linear forwards`;
+      container.appendChild(leaf);
+
+      leaf.addEventListener('animationend', () => leaf.remove());
+    }
+  }
+
+});
+</script>
+
+<style>
+@keyframes leafFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  100% { transform: translateY(50px) rotate(360deg); opacity: 0; }
+}
+</style>
 </body>
 </html>
